@@ -1,0 +1,56 @@
+# EditorConfig is awesome: http://EditorConfig.org
+
+################################################################################
+# WILDCARD PATTERNS
+################################################################################
+
+# Special characters recognized in section names for wildcard matching:
+
+# *	Matches any string of characters, except path separators (/)
+# **	Matches any string of characters
+# ?	Matches any single character
+# [name]	Matches any single character in name
+# [!name]	Matches any single character not in name
+# {s1,s2,s3}	Matches any of the strings given (separated by commas) (Available since EditorConfig Core 0.11.0)
+# {num1..num2}	Matches any integer numbers between num1 and num2, where num1 and num2 can be either positive or negative
+
+
+################################################################################
+# CONFIGURATION
+################################################################################
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# Matches multiple files with brace expansion notation
+# Set default charset
+[*.{js,py}]
+charset = utf-8
+
+# 4 space indentation
+[*.py]
+indent_style = space
+indent_size = 4
+
+# Tab indentation (no size specified)
+[Makefile]
+indent_style = tab
+
+# Indentation override for all JS under lib directory
+[lib/**.js]
+indent_style = space
+indent_size = 2
+
+# Matches the exact files either package.json or .travis.yml
+[{package.json,.travis.yml}]
+indent_style = space
+indent_size = 2
